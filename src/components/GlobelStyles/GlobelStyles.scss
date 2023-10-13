@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 :root {
     --primary: #fe2c55;
@@ -23,8 +23,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     color: var(--text-color);
