@@ -12,7 +12,6 @@ import {
     faEarthAsia,
     faKeyboard,
     faCircleQuestion,
-    faCloudUpload,
     faUser,
     faCoins,
     faGear,
@@ -26,6 +25,8 @@ import images from '@/assets/images';
 import AccountItem from '@/components/AcccountItem';
 import Menu from '@/components/Popper/Menu';
 import MenuItem from '@/components/Popper/Menu/MenuItem';
+import { UploadIcon } from '@/components/Icons';
+import Image from '@/components/Image';
 
 const cx = classNames.bind(styles);
 
@@ -148,7 +149,7 @@ function Header() {
                         <>
                             <Tippy delay={(0, 200)} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon className={cx('upload-icon')} />
                                 </button>
                             </Tippy>
                         </>
@@ -160,10 +161,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
-                                src="https://hinhgaixinh.com/wp-content/uploads/2022/08/anh-gai-xinh-mac-bikini-trung-quoc-cuon-hut-nguoi-xem.jpg"
+                            <Image
+                                src="https//hinhgaixinh.com/wp-content/uploads/2022/08/anh-gai-xinh-mac-bikini-trung-quoc-cuon-hut-nguoi-xem.jpg"
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
+                                fallback="https://hinhgaixinh.com/wp-content/uploads/2022/08/hinh-anh-gai-xinh-khoe-hang-tuyet-dep.jpg"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
