@@ -2,10 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Search.module.scss';
 import HeadlessTippy from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '@/components/Popper';
-import AccountItem from '@/components/AcccountItem';
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import * as searchService from '@/apiServices/searchServices';
+import { Wrapper as PopperWrapper } from '@/components/Popper';
+import AccountItem from '@/components/AcccountItem';
 import { useDebounce } from '@/hook';
 
 const cx = classNames.bind(styles);
@@ -26,17 +28,18 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        const fetchApi = async () => {
+            setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResults(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+            const results = await searchService.search(debounce);
+            setSearchResults(results);
+
+            setLoading(false);
+        };
+
+        fetchApi();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debounce]);
 
     const handleClear = () => {
