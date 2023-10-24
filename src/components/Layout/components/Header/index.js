@@ -12,6 +12,8 @@ import {
     faGear,
     faSignOut,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import routesConfig from '@/config/routes';
 
 import Search from '@/components/Layout/components/Search';
 import Button from '@/components/Button';
@@ -96,9 +98,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo.default} alt="Tiktok" />
-                </div>
+                </Link>
                 <Search />
                 <div className={cx('actions')}>
                     {currentUser ? (
