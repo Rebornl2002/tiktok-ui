@@ -16,13 +16,12 @@ import { Link } from 'react-router-dom';
 import config from '@/config';
 
 import Search from '@/layouts/components/Search';
-import Button from '@/components/Button';
+import Button from '@/components/Button/Button';
 import styles from './Header.module.scss';
 import images from '@/assets/images';
-import Menu from '@/components/Popper/Menu';
-import MenuItem from '@/components/Popper/Menu/MenuItem';
-import { UploadIcon } from '@/components/Icons';
-import Image from '@/components/Image';
+import Menu from '@/components/Popper/Menu/Menu';
+import { UploadIcon } from '@/components/Icons/Icons';
+import Image from '@/components/Image/Image';
 
 const cx = classNames.bind(styles);
 

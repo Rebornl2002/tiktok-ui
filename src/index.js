@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from '@/App';
 import reportWebVitals from './reportWebVitals';
-import GlobelStyle from '@/components/GlobelStyles';
+import GlobelStyle from '@/components/GlobelStyles/GlobelStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <GlobelStyle>
-      <App />
-    </GlobelStyle>
-  </React.StrictMode>,
+    <React.StrictMode>
+        <GlobelStyle>
+            <App />
+        </GlobelStyle>
+    </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
